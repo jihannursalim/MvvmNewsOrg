@@ -8,7 +8,9 @@ import com.example.mvvmnewsapi.R
 import com.example.mvvmnewsapi.adapter.CategoryAdapter
 import com.example.mvvmnewsapi.databinding.ActivityCategoryBinding
 import com.example.mvvmnewsapi.model.CategoryData
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class CategoryActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityCategoryBinding
@@ -18,6 +20,7 @@ class CategoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityCategoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
         val listCategory = arrayListOf(
             CategoryData("BUSINESS",R.drawable.business),

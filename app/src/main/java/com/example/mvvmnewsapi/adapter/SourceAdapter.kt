@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.mvvmnewsapi.databinding.ItemSourceBinding
 import com.example.mvvmnewsapi.model.Source
 
-class SourceAdapter(var listSource : List<Source>) : RecyclerView.Adapter<SourceAdapter.ViewHolder>() {
+class SourceAdapter(var listSource: List<Source>?) : RecyclerView.Adapter<SourceAdapter.ViewHolder>() {
 
     class ViewHolder(var binding: ItemSourceBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -16,10 +16,11 @@ class SourceAdapter(var listSource : List<Source>) : RecyclerView.Adapter<Source
     }
 
     override fun onBindViewHolder(holder: SourceAdapter.ViewHolder, position: Int) {
-        holder.binding.nameSource.text = listSource[position].name
+        holder.binding.nameSource.text = listSource!![position].name
     }
 
     override fun getItemCount(): Int {
-        return listSource.size
+        return listSource!!.size
+
     }
 }
